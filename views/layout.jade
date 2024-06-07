@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon")
+    script(src='/static/javascripts/display.js')
+    title Сколково
+    link(rel='stylesheet', href='/static/stylesheets/style.css')
+  body
+    div(class='header')
+        div(class='menu')
+            img(src='http://127.0.0.1:3000/static/images/logo.png' style='height: 4em;' onclick='window.location.assign("/");')
+            a(href='/navigator') Навигатор
+            a(href='/grants') Гранты
+            a(href='/services') Сервисы
+        div(class='short-menu')
+            span(class='short-title' onclick='toggleMenu();') РАЗДЕЛЫ
+            div(id='short-menu-items' class='short-menu-items' style='display: none;')
+                span(class='short-item' onclick='window.location.assign("/");') Главная
+                span(class='short-item' onclick='window.location.assign("/navigator");') Навигатор
+                span(class='short-item' onclick='window.location.assign("/grants");') Гранты
+                span(class='short-item' onclick='window.location.assign("/services");') Сервисы
+        div(class='user')
+            if user
+                if user.authorized
+                    a(href='/navigator/my_companies')= user.name
+                    a(href='/logout') выйти
+                else
+                    a(href='/login') войти
+            
+    div(class='content')
+        block content

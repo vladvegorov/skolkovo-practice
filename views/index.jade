@@ -1,0 +1,39 @@
+extends layout
+
+block content
+    div(class='welcome')
+        img(src="/static/images/technopark.jpg")
+        div(class="news")
+            div(class="date")
+                span 6 июня 2024 
+            p "Сколково", Минобрнауки и "Национальные приоритеты" объединяют усилия для развития техпредпринимательства
+            div(class="date")
+                span 6 июня 2024
+            p "Сколково" и ДОМ.РФ займутся развитием искусственного интеллекта для строительной отрасли
+            div(class="date")
+                span 5 июня 2024
+            p "Сколково" планирует поиск инновационных решений для wellness-индустрии
+            div(class="date")
+                span 4 июня 2024
+            p Инструменты и сервисы поддержки для стартапов будет подбирать искусственный интеллект
+    div(class='card-container')
+        div(class='block grants')
+            span(class='title') Гранты
+            ul
+                li Внедрение искусственного интеллекта
+                li Внедрение цифровых технологий
+                li Создание дизайн-центров микроэлектроники
+                li Инвестиции бизнес-ангелов
+                li Инвестиции в университетские стартапы
+                li Микрогранты
+            button(onclick='window.location.assign("/grants");') Узнать больше
+        div(class='block services')
+            span(class='title') Сервисы
+            ul
+                li Таможенное декларирование
+                li Менторская программа
+                li Школа стартапов Skolkovo
+                li Экспертиза проектов
+                li Зарубежные бизнес-миссии
+                li Патентование в РФ и за рубежом
+            button(onclick='window.location.assign("/services");') Узнать больше

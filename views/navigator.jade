@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    each company in companies
+        div(class='block company')
+            span(class='title')= company.name
+            p= 'Дата основания: ' + moment(company.creation_date).format("DD.MM.YYYY")
+            p= 'ИНН: ' + company.INN
+            
+            div(class='card-container')
+                each product in company.products
+                    div(class='block product')
+                        span(class='title')= product.name
+                        span= product.description
+                        span= 'Цена: ' + product.price + ' руб.'

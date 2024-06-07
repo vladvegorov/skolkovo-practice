@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    div
+        h1 Зарегистрировать компанию
+        form(action='/navigator/my_companies/create' method='post' class="inline-form")
+
+            label(for='name') Название:
+            input(id='name' name='name' type='text' autocomplete='название' required='' autofocus='')
+
+            label(for='date-created') Дата создания:
+            input(id='date-created' name='date_created' type='date' required='')
+
+            label(for='inn') ИНН:
+            input(id='inn' name='inn' type='text' maxlength=10, minlegth=10, required='')
+            button(type='submit') Зарегистрировать
+    
+    each company in companies
+        div(class='block company')
+            span(class='title')= company.name
+            br
+            a(href='/navigator/my_companies/' + company.id + '/delete') удалить компанию
+            p
+            div(class='card-container')
+                each product in company.products
+                    div(class='block product')
+                        span(class='title')= product.name
+                        a(href='/navigator/my_companies/delete_product/' + product.id) удалить продукт
+            
+            h3 Добавить продукт
+            form(action='/navigator/my_companies/' + company.id + '/create_product' method='post' class="inline-form")
+                label(for='name') Название:
+                input(id='name' name='name' type='text' autocomplete='название' required='' autofocus='')
+
+                label(for='description') Описание:
+                input(id='description' name='description' type='text' required='')
+
+                label(for='price') Цена в рублях:
+                input(id='price' name='price' type='number' min=0, step=0.01, required='' style='width: 5em;')
+                button(class='form-button' type='submit') Добавить
+        

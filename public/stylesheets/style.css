@@ -1,0 +1,223 @@
+body {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 12em;
+  margin: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header .menu {
+    flex-direction: row;
+    gap: 2em;
+    align-items: center;
+}
+
+.menu a {
+    color: black;
+    margin-top: 0.4em;
+    text-decoration: none;
+    font: bold 26px Arial, sans-serif;
+}
+
+.short-menu {
+    font: bold 20px Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.short-menu-items {
+    font: bold 20px Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+}
+
+.short-menu-items * {
+    font: bold 20px Arial, sans-serif;
+}
+
+.header .user {
+    margin-top: 0.6em;
+    margin-left: 0.6em;
+}
+
+.user a {
+    font: 26px Arial, sans-serif;
+    margin-right: 1em;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.welcome img {
+    height: 30em;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    margin: 0em 2em;
+}
+
+.news p {
+    font: 18px Arial, sans-serif;
+    margin-top: 0em;
+    margin-bottom: 2em;
+}
+
+.news .date {
+    font: 14px Arial;
+    color: grey;
+    margin-bottom: 0.1em;
+}
+
+.block {
+    border: 2px grey solid;
+    border-radius: 6px;
+    padding: 2em;
+    font: 18px Arial, sans-serif;
+}
+
+.block button {
+    padding: 0.8em;
+    font: 18px Arial;
+    border-radius: 6px;
+}
+
+.block .title {
+    font: 24px Arial, sans-serif;
+    font-weight: bold;
+}
+
+.block.grants button {
+    background-color: #a4f5eeaa;
+}
+
+.block.services button {
+    background-color: #efffadaa;
+}
+
+.block.product {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.card-container>* {
+    flex: 1 1 15em;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5em;
+}
+
+.login-form * {
+    font: 20px Arial, sans-serif;
+    margin: 0.4em;
+}
+
+.login-form section {
+    display: grid;
+    grid-template-columns: 5em 10em;
+    justify-content: end;
+}
+
+.login-form button {
+    padding: 0.8em;
+    font: 18px Arial;
+    border-radius: 6px;
+    background: #8cfc03;
+    width: 100%;
+}
+
+.inline-form * {
+    font: 18px Arial, sans-serif;
+    margin: 0.2em;
+}
+
+.inline-form button {
+    padding: 0.2em;
+    font: 18px Arial;
+    border-radius: 6px;
+}
+
+@media (max-width: 1100px) {
+    .menu {
+        display: none;
+    }
+    
+    .welcome img {
+        display: none;
+    }
+    
+    .short-menu {
+        display: flex;
+        margin-top: 1.8em;
+    }
+    
+    .header .user {
+        margin-top: 2.1em;
+        margin-left: 0.6em;
+    }
+    
+    .header {
+        margin-bottom: 0.3em;
+    }
+    
+    body {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 1101px) {
+    .menu {
+        display: flex;
+    }
+    
+    .short-menu {
+        display: none;
+    }
+    
+    .header {
+        height: 6em;
+        align-items: center;
+    }
+    
+    .header .user {
+        margin-top: 0.6em;
+        margin-left: 0.6em;
+    }
+    
+    body {
+        padding: 0px 12em;
+    }
+}
